@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  plan:
+  plan-dev:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,7 +18,7 @@ jobs:
     
   apply-dev:
     if: github.event_name == 'pull_request'
-    needs: [plan]
+    needs: [plan-dev]
     runs-on: ubuntu-latest
     environment: 
       name: Development
