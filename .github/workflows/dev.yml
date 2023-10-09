@@ -17,7 +17,6 @@ jobs:
         run: echo I am running tecton plan in dev branch
     
   apply-dev:
-    name: apply to Development 
     if: github.event_name == 'pull_request'
     needs: [plan]
     runs-on: ubuntu-latest
